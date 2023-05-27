@@ -15,16 +15,20 @@
 
 */
 
-
 * {
   margin: 0rem;
   padding: 2px;
 }
 
-a {
-  text-decoration: none;
+aside a {
+  /* text-decoration: none; */
   color: inherit;
 }
+
+  /* nav a {
+    text-decoration: none;
+    color: inherit;
+  } */
 
 body {
   font: normal 18px "Open Sans", sans-serif;
@@ -36,6 +40,10 @@ body {
   );
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   color: #fff;
+}
+
+#github:hover {
+  color: red;
 }
 
 main {
@@ -54,8 +62,6 @@ header {
   );
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-
-
 
 h1 {
   font: normal 4em "Playfair Display SC", serif;
@@ -79,17 +85,21 @@ h1 {
     -0.4em 0 0.4em rgba(252, 176, 69, 1);
   /* box-shadow: 5px 10px rgba(255, 255, 255, 1)   */
   /* box-shadow: 5px 10px rgba(255, 255, 255, 1) ; */
+  height: 100%;
+  width: 100%;
+/* justify-content: center; */
 }
 
 .project-photos {
-  border-radius: 20px;
+  border-radius: 1em;
   /* border: rgb(0, 0, 0) solid 2px; */
   box-shadow: 0.4em 0 0.4em rgba(253, 29, 29, 1),
-  -0.4em 0 0.4em rgba(252, 176, 69, 1);
-  justify-content: center; /* centers items horizontally */
-  align-items: center; /* centers items vertically */
-  height: 200px;
-  width: auto;
+    -0.4em 0 0.4em rgba(252, 176, 69, 1);
+  /* justify-content: center; 
+  align-items: center;  */
+  height: 50%;
+  width: 80%;
+  /* margin: 0em 6em; */
 }
 
 nav {
@@ -148,7 +158,6 @@ nav a:hover::after {
   padding: 0.5 rem;
 }
 
-
 /* Inside of header-2 I created some animations.
    Review this code if there are things that are not responsive. */
 
@@ -162,7 +171,6 @@ nav a:hover::after {
   /* background-color: #f3f; */
   animation-name: example1;
   animation-duration: 25s;
-
 }
 
 @keyframes example1 {
@@ -205,6 +213,7 @@ nav a:hover::after {
 .box-2 {
   grid-area: box-2;
   background-color: #333;
+  /* text-align: center; */
   color: rgb(255, 255, 255);
   border-radius: 5px;
   /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
@@ -215,6 +224,7 @@ nav a:hover::after {
   background-color: rgb(255, 255, 255);
   color: rgb(82, 79, 79);
   border-radius: 5px;
+  text-align: center;
   /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
 
@@ -222,6 +232,7 @@ nav a:hover::after {
   grid-area: box-4;
   background-color: rgb(255, 255, 255);
   color: rgb(82, 79, 79);
+  text-align: center;
   border-radius: 5px;
   /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
@@ -231,6 +242,7 @@ nav a:hover::after {
   background-color: rgb(255, 255, 255);
   color: rgb(82, 79, 79);
   border-radius: 5px;
+  text-align: center;
   /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
 
