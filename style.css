@@ -1,8 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display+SC");
 
+/*  a, body, main, header, h1, h2, content-header, photo-tion, project-photos, nav, nav a, nav a::after, nav a:hover::after, container, header, header-2, content-1, sidebar, box-1, box-2, box-3, box-4, box-5, footer, #infinity, 
+
+.header,
+.header-2,
+.content-1,
+.sidebar,
+"".box-1,"" 
+.box-2,
+.box-3,
+.box-4,
+.box-5,
+.footer
+
+*/
+
+
 * {
-  margin: .25rem;
-  padding: 0;
+  margin: 0rem;
+  padding: 2px;
 }
 
 a {
@@ -27,6 +43,8 @@ main {
 }
 
 header {
+  grid-area: header;
+  text-align: center;
   background: rgb(131, 58, 180);
   background: linear-gradient(
     90deg,
@@ -37,18 +55,41 @@ header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+
+
 h1 {
   font: normal 4em "Playfair Display SC", serif;
   text-align: center;
 }
 
-h2 {
+/* h2 {
   text-align: center;
+} */
+
+.content-header {
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
 .photo-tion {
   border-radius: 25%;
-  border: rgba(131, 58, 180, 1) solid 3px;
+  /* border: rgb(255, 255, 255) solid 3px; */
+  box-shadow: 0.4em 0 0.4em rgba(253, 29, 29, 1),
+    -0.4em 0 0.4em rgba(252, 176, 69, 1);
+  /* box-shadow: 5px 10px rgba(255, 255, 255, 1)   */
+  /* box-shadow: 5px 10px rgba(255, 255, 255, 1) ; */
+}
+
+.project-photos {
+  border-radius: 20px;
+  /* border: rgb(0, 0, 0) solid 2px; */
+  box-shadow: 0.4em 0 0.4em rgba(253, 29, 29, 1),
+  -0.4em 0 0.4em rgba(252, 176, 69, 1);
+  justify-content: center; /* centers items horizontally */
+  align-items: center; /* centers items vertically */
+  height: 200px;
+  width: auto;
 }
 
 nav {
@@ -65,7 +106,7 @@ nav a {
   position: relative;
 }
 
-/* animmation */
+/* animation */
 nav a::after {
   content: "";
   position: absolute;
@@ -85,30 +126,28 @@ nav a:hover::after {
 .container {
   display: grid;
   grid-template-areas:
-    "header header header"
-    "content content sidebar"
-    "box-1 box-2 sidebar"
-    "box-3 box-4 sidebar"
-    "footer footer footer";
-  gap: 1.5rem;
+    "header header  header header"
+    "sidebar content content  box-1"
+    "box-2 box-2 box-2 box-2  "
+    "box-3 box-3 box-4 box-5  "
+    "footer footer footer footer";
+  gap: 1rem;
 }
 
 .header,
+.header-2,
 .content-1,
 .sidebar,
-.box-1,
+/* .box-1, */
 .box-2,
 .box-3,
 .box-4,
+.box-5,
 .footer {
   border: 1px #ccc solid;
   padding: 0.5 rem;
 }
 
-.header {
-  grid-area: header;
-  text-align: center;
-}
 
 /* Inside of header-2 I created some animations.
    Review this code if there are things that are not responsive. */
@@ -116,22 +155,25 @@ nav a:hover::after {
 .header-2 {
   grid-area: header;
   text-align: center;
-  background-color: #f3f;
-
-  background-color: red;
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+  /* background-color: #f3f; */
   animation-name: example1;
-  animation-duration: 5s;
+  animation-duration: 25s;
+
 }
 
 @keyframes example1 {
   from {
-    background-color: magenta;
+    background-color: rgba(131, 58, 180, 1);
   }
   to {
-    background-color: yellow;
+    background-color: rgba(252, 176, 69, 1);
   }
 }
-
+/*               /header-2 animation ending/                 */
 .content-1 {
   grid-area: content;
   background-color: rgb(255, 255, 255);
@@ -146,20 +188,26 @@ nav a:hover::after {
   border-radius: 5px;
 }
 
+.contact-thumb-nail {
+  height: 50px;
+  width: 50px;
+  padding: 0px;
+}
+
 .box-1 {
   grid-area: box-1;
-  background-color: rgb(255, 255, 255);
-  color: rgb(82, 79, 79);
+  /* background-color: rgb(255, 255, 255); */
+  /* color: rgb(82, 79, 79);
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
 
 .box-2 {
   grid-area: box-2;
-  background-color: rgb(255, 255, 255);
-  color: rgb(82, 79, 79);
+  background-color: #333;
+  color: rgb(255, 255, 255);
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
 
 .box-3 {
@@ -167,7 +215,7 @@ nav a:hover::after {
   background-color: rgb(255, 255, 255);
   color: rgb(82, 79, 79);
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
 
 .box-4 {
@@ -175,9 +223,15 @@ nav a:hover::after {
   background-color: rgb(255, 255, 255);
   color: rgb(82, 79, 79);
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  align-content: center;
-  justify-content: center;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+.box-5 {
+  grid-area: box-5;
+  background-color: rgb(255, 255, 255);
+  color: rgb(82, 79, 79);
+  border-radius: 5px;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
 
 .footer {
@@ -189,26 +243,14 @@ nav a:hover::after {
   /* font-size: 24px; */
 }
 
-@media (max-width: 500px) {
-  .container {
-    grid-template-areas:
-      "header"
-      "content-1"
-      "sidebar"
-      "box-1"
-      "box-2"
-      "box-3"
-      "box-4"
-      "footer";
-  }
-}
-
 /* Use to create the infinity symbol */
-#infinity {
+/* #infinity {
   position: relative;
+  bottom: 10px;
   width: 212px;
   height: 100px;
   box-sizing: content-box;
+
 }
 #infinity:before,
 #infinity:after {
@@ -228,4 +270,35 @@ nav a:hover::after {
   right: 0;
   border-radius: 50px 50px 50px 0;
   transform: rotate(45deg);
+} */
+
+/* Media for device size, etc.. */
+@media (max-width: 500px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "box-1"
+      "content"
+      "box-2"
+      "box-3"
+      "box-4"
+      "box-5"
+      "sidebar"
+      "footer";
+  }
 }
+
+/* 
+
+    header
+     
+    content 
+    box-1   
+    box-2
+    box-3 
+    box-4 
+    box-5 
+    sidebar 
+    footer
+
+*/
